@@ -36,6 +36,11 @@ figcaption {
 	font-style: italic;
 }
 
+pre {
+	padding: 10px;
+	overflow: auto;
+}
+
 /* For TAGLIST.HTML */
 .taglist {
 	text-align: center ;
