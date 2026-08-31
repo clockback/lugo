@@ -75,4 +75,7 @@ pre {
 	}
 }
 
-
+:not(pre) > code {
+	background-color: #272822;
+	padding: 0.2em 0.4em;
+}
