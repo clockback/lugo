@@ -22,10 +22,9 @@ footer {
 
 a {
 	text-decoration: none;
-	font-weight: none;
 }
 
-.figureimg img {
+.imgfig img {
 	margin: auto;
 	display: block;
 }
@@ -70,12 +69,48 @@ pre {
 		color: azure;
 	}
 
-	a {
+	article a, header>a, footer>a {
 		color: #89bcff;
+	}
+
+	:not(pre) > code {
+		background-color: #272822;
+	}
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+	article a, header>a, footer>a {
+		color: #17a;
+	}
+
+	:not(pre) > code {
+		background-color: #eee;
 	}
 }
 
 :not(pre) > code {
-	background-color: #272822;
 	padding: 0.2em 0.4em;
+}
+
+nav > ul {
+	background: #89bcff;
+	margin: 0 auto;
+	list-style: none;
+	font-weight: bold;
+	padding: 0.5em 0;
+}
+
+nav > ul > li {
+	display: inline;
+}
+
+nav > ul > li > a {
+	color: white;
+	padding: 0.4em 0.8em;
+	font-size: 20px;
+}
+
+nav > ul > li > a:hover {
+	background: #679add;
 }

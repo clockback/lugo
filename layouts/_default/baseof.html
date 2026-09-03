@@ -2,7 +2,7 @@
 <html lang="{{ .Site.Language }}">
 <head>
 	<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
-	<link rel="canonical" href="{{ .Site.BaseURL }}">
+	<link rel="canonical" href="{{ .Permalink }}">
 	<link rel='alternate' type='application/rss+xml' title="{{ .Site.Title }} RSS" href='/index.xml'>
 	<link rel='stylesheet' type='text/css' href='/style.css'>
 	{{ with .Site.Params.favicon }}<link rel="icon" href="{{ . }}">
@@ -17,12 +17,19 @@
 <body>
 {{ if .Site.Menus.main }}{{ partial "nav.html" . }}{{ end -}}
 <main>
-<a href="{{ .Site.Home.RelPermalink }}"><header>
-	<h1 id="tag_{{ replaceRE "(\\s)" "-" .Title }}">{{ block "title" . }}{{ end }}</h1>
+<header>
+	<a href="{{ .Site.Home.RelPermalink }}">
+		<h1 id="tag_{{ replaceRE "(\\s)" "-" .Title }}">{{ block "title" . }}{{ end }}</h1>
+	</a>
 	{{- with .Param "subtitle" }}
 	<h2>{{ . }}</h2>
 	{{- end }}
-</header></a>
+	<nav>
+		<ul>
+			<li><a href="/articles">Articles</a></li><li><a href="/bio">Bio</a></li><li><a href="/links">Links</a></li>
+		</ul>
+	</nav>
+</header>
 <article>
 {{ block "main" . -}}
 {{- .Content -}}
@@ -34,7 +41,7 @@
 {{ block "footer" . -}}
 <footer>
 	<a href="{{ .Site.BaseURL }}">{{ .Site.BaseURL }}</a>
-	{{- if .Param "showrss" }}<br><br><a href="/index.xml"><img src="/rss.svg" style="max-height:1.5em" alt="RSS Feed" title="Subscribe via RSS for updates."></a>{{ end }}
+	{{- if .Param "showrss" }}<br><br><a href="/index.xml"><img src="/rss.svg" style="max-height:1.5em" alt="RSS Feed" title="Subscribe via RSS for updates." loading="lazy"></a>{{ end }}
 </footer>
 {{ end -}}
 </body>
