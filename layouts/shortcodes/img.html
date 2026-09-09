@@ -4,7 +4,7 @@
 	alt: alternative text
 	caption: caption
 	mouse: what the image says when moused over ("title" in HTML)
-	maxHeight: the maximum height of the image
+	displayWidth: the maximum width of the image
 -->
 <figure class="imgfig
 	{{- with .Get "class" }} {{.}}{{ end -}}
@@ -15,7 +15,7 @@
 		{{- with .Get "width"}}width="{{.}}"{{ end -}}
 		{{- with .Get "height"}}height="{{.}}"{{ end -}}
 		{{- with .Get "mouse" }} title="{{.}}"{{ end -}}
-		{{- with .Get "maxHeight" }} style="max-height: {{.}}; width: auto;"{{ end -}}
+		{{- with .Get "displayWidth" }} style="height: auto; width: {{.}};"{{ end -}}
 	     	loading="lazy"
 	>
 	{{- if .Get "link"}}</a>{{ end -}}
