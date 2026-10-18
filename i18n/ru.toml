@@ -1,0 +1,17 @@
+[nav_articles]
+other = "Статьи"
+
+[nav_articles_slug]
+other = "stati"
+
+[nav_about]
+other = "Обо мне"
+
+[nav_about_slug]
+other = "obo-mne"
+
+[nav_links]
+other = "Ссылки"
+
+[nav_links_slug]
+other = "ssylki"

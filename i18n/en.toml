@@ -1,0 +1,17 @@
+[nav_articles]
+other = "Aritcles"
+
+[nav_articles_slug]
+other = "articles"
+
+[nav_about]
+other = "Bio"
+
+[nav_about_slug]
+other = "bio"
+
+[nav_links]
+other = "Links"
+
+[nav_links_slug]
+other = "links"
